@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<link rel="stylesheet" type="text/css" href="khu.css">
+<body >
+<div id="tong">
+	<div id="giua">
+	<form id="form">
+	<h1>Tìm kiếm thông tin</h1>
+	<br>
+	<input type="text" id="nhap" class="nhap">
+	<br>
+	<br>
+	<button onclick="return an()" id="nut" class="dk">Nhập</button>
+	<br>
+	<br>
+	<button onclick="setTimeout(ok(), 5000)" class="dk">Đừng ấn vào</button>
+	<br>
+	<br>
+	<span id="1">Phía dưới là đường dẫn ví dụ</span>
+	<br>
+	<span>https://www.facebook.com/j2teamnnl/</span>
+	<br>
+	<span>https://www.facebook.com/groups/j2team.community/</span>
+	<br>
+	<span>https://www.facebook.com/profile.php?id=100048240755558</span>
+	</form>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	function an(){
+		let nhap = document.getElementById('nhap').value;
+		const regex_id = /(?:^https:\/\/www\.facebook\.com\/)(?:groups\/?|profile\.php\?id=?|)([a-z0-9_\.]*)(?:\/|$)/;
+		const ketqua = nhap.match(regex_id);
+		if (ketqua === null) {
+			window.alert("Chưa nhập link");
+			return true;
+		}
+		else{
+			window.alert(`ID của bạn là ${ketqua[1]}`);
+			return false;
+		}
+
+	}
+	function ok() {
+		let chu = document.getElementById('1').value;
+		window.alert("Đã bảo đừng ấn rồi mà,có chuyện rồi đó!!")
+		window.open("https://vtruyen.com/truyen/xuyen-toa-1");
+
+	}
+</script>
+</html>
